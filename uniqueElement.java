@@ -15,30 +15,17 @@ public class uniqueElement {
 		}
 		return a;
 	}
-	public static int unique(int a[]) {
-		int i=0,c,j=0,k=0,answr=0;
-		for( i=0;i<a.length;i++){
-			c=0;
-			for (k=0;k<i-1;k++){
-				if (a[k]==a[i]){
-					c++;
-				}
-			}
-			for (j=i+1;j<a.length;j++){
-
-				if(a[i]==a[j]){
-					c++;
-				}
-			}
+	
+	public static int findUnique(int arr[]) {
 
 
-			if (c==0){
-				answr= a[i];
-			}
+
+		int unpaired = arr[0];
+		for(int i = 1; i < arr.length; i++){
+			unpaired = unpaired ^ arr[i];
+
 		}
-		return answr;
-
-
+		return unpaired;
 	}	
 
 	public static void main(String[] args) {
