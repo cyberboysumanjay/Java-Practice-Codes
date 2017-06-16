@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-public class swapAlternate {
+
+public class Q2Practice {
+	
 	public static int[] takeInput() {
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
@@ -12,20 +14,19 @@ public class swapAlternate {
 	}
 	public static void printArray(int a[]) {
 		for (int j=0;j<a.length;j++){
-			System.out.print(a[j]+" ");
+			System.out.print(a[j]);
 		}
 	}
 	public static void main(String[] args) {
 		int a[]=takeInput();
-		for (int j = 0; j < a.length-1; j++) {
-			for (int i=0;i<a.length-1;i++){
-					int temp=a[i];
-					a[i]=a[i+a.length-d];
-					a[i+1]=temp;
+		for (int i = 0; i < a.length; i++) {
+			if (a[i]<4) {
+				a[i]=-1;
+			}
+			else {
+				a[i]=a[i]/4;
 			}
 		}
-		printArray(a);
+	printArray(a);	
 	}
-
-
 }

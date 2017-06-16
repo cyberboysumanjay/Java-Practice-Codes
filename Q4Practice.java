@@ -1,7 +1,8 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 
-public class arrays {
+public class Q4Practice {
 	public static int[] takeInput() {
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
@@ -16,23 +17,19 @@ public class arrays {
 			System.out.println(a[j]);
 		}
 	}
-	public static int largest(int a[]) {
-		int max=a[0];
-		for (int i=0;i<a.length;i++){
-			if (a[i]>max){
-				max=a[i];
+	public static void main(String[] args) {
+		int a[]=takeInput();
+		Arrays.sort(a);
+		int b[]=new int[a.length];
+		 
+		for (int i = 0; i < a.length-1; i++) {
+			for (int j = 0; j < a.length; j++) {
+				if (a[i]+a[j]==0) {
+					b[i]=a[i];
+					b[i+1]=a[j];
+				}
 			}
 		}
-		
-		return max;
-	}
-	public static void main(String[] args) {
-		int a[]= takeInput();
-//		printArray(a);
-		int max =largest(a);
-		System.out.println(max);
-
-
-
+	printArray(b);	
 	}
 }

@@ -14,17 +14,20 @@ public class linearSearch {
 	
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		int []a=takeInput();
+		int []arr= takeInput();
 		int search= s.nextInt();
-		int index= linearSearch(a,search);
+		int index= linearSearch(arr,search);
 		System.out.println(index);
 		
 	}
-	public static int linearSearch(int a[],int n) {
+	public static int linearSearch(int[] arr, int num){
 		int index=0;
-		for (int i=0;i<n;i++){
-			if (n==a[i]){	
+		for (int i=0;i<arr.length;i++){
+			if (num==arr[i]){	
 				 index=i;
+			}
+			else{
+			     index=-1;
 			}
 		}
 		return index;
